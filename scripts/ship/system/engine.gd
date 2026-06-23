@@ -1,0 +1,2 @@
+extends ShipSystem
+class_name EngineSystem

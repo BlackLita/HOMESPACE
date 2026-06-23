@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b6fhb2iqdp6ky"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=441559143]
+visible = false
+
+[node name="IterectiveLabel" type="Label" parent="." unique_id=1336432258]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25
+text = "[E] Repair"

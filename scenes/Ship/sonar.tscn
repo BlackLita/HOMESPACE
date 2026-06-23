@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cl655wyrdiflg"]
+
+[ext_resource type="Script" uid="uid://dmxe166qymwun" path="res://scripts/sonar.gd" id="1_wt5vv"]
+[ext_resource type="PackedScene" uid="uid://d20a63i0lhk6d" path="res://scenes/detected_objects.tscn" id="2_wt5vv"]
+[ext_resource type="Script" uid="uid://bx0op78wdk2b0" path="res://scripts/ship/system/sonar_detect.gd" id="3_ce2y0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_56p6u"]
+
+[node name="sonar_system" type="Node3D" unique_id=1607751529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.349)
+script = ExtResource("1_wt5vv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=253401498]
+use_collision = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=877842622]
+mesh = SubResource("SphereMesh_56p6u")
+
+[node name="detected_objects" parent="." unique_id=628136955 instance=ExtResource("2_wt5vv")]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.064958096, -0.5182681)
+script = ExtResource("3_ce2y0")

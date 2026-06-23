@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://k0jqgpah6gv2"]
+
+[ext_resource type="Script" uid="uid://b2q53y0y4ridk" path="res://scripts/ship/system/jump_console.gd" id="1_ptk7t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhunq"]
+albedo_color = Color(0.08000112, 0.086590536, 0.097324796, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_color = Color(1, 0.14901961, 0, 1)
+
+[node name="JumoConsole" type="Node3D" unique_id=1156442337]
+
+[node name="stuff" type="CSGBox3D" parent="." unique_id=750809382]
+transform = Transform3D(0.5556955, 0, 0, 0, 0.54796153, 0, 0, 0, 0.59489286, 0, 0.5417702, 0.0005161464)
+use_collision = true
+size = Vector3(1, 1.873169, 1)
+
+[node name="stuff_button" type="CSGBox3D" parent="." unique_id=998285832]
+transform = Transform3D(0.77845335, 0, 0, 0, 0.27588245, 0.09850108, 0, -0.1592808, 0.17060888, 0, 1.0032353, 0.20025668)
+use_collision = true
+size = Vector3(1, 1.873169, 1)
+
+[node name="button" type="CSGBox3D" parent="." unique_id=456109416]
+transform = Transform3D(0.22137915, 0, 0, 0, 0.117561094, 0.035316113, 0, -0.06787394, 0.061169308, 0, 0.95935655, 0.3440103)
+material_override = SubResource("StandardMaterial3D_bhunq")
+use_collision = true
+size = Vector3(1, 1.873169, 1)
+script = ExtResource("1_ptk7t")
+
+[node name="status_bar" type="CSGBox3D" parent="." unique_id=1354212542]
+transform = Transform3D(0.71138465, 0, 0, 0, 0.073942706, 0.027750948, 0, -0.04269084, 0.048066057, 0, 1.1947618, 0.1729691)
+material_override = SubResource("StandardMaterial3D_riqys")
+use_collision = true
+size = Vector3(1, 1.873169, 1)

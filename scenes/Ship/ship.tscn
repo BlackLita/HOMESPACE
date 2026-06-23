@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://c6uc0gbyjiqv0"]
+
+[ext_resource type="Script" uid="uid://c3hnaugciehmp" path="res://scripts/ship/ship_manager.gd" id="1_fi0c1"]
+[ext_resource type="Script" uid="uid://bllicw2xumsrs" path="res://scripts/ship/system/hull.gd" id="2_cpk57"]
+[ext_resource type="Script" uid="uid://dguc4f86wb0my" path="res://scripts/ship/system/reactor.gd" id="3_x0dvg"]
+[ext_resource type="Script" uid="uid://cyeaw4h6yp0h3" path="res://scripts/ship/system/engine.gd" id="4_6fnqi"]
+[ext_resource type="Script" uid="uid://8n8wxhlq8gy6" path="res://scripts/ship/system/sonar_system.gd" id="5_sls6b"]
+[ext_resource type="PackedScene" uid="uid://bvm6cdw7nmxnu" path="res://scenes/status_panel.tscn" id="6_cpk57"]
+[ext_resource type="Script" uid="uid://cdkchxv2wexl2" path="res://scripts/ship/system/jump_drive.gd" id="6_sls6b"]
+[ext_resource type="PackedScene" uid="uid://cl655wyrdiflg" path="res://scenes/Ship/sonar.tscn" id="7_x0dvg"]
+[ext_resource type="PackedScene" uid="uid://k0jqgpah6gv2" path="res://scenes/Ship/jump_console.tscn" id="9_sls6b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpk57"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpk57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0dvg"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fnqi"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3bpr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6sgo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhqun"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sls6b"]
+
+[node name="Ship" type="Node3D" unique_id=1129097528]
+
+[node name="ShipManager" type="Node" parent="." unique_id=700805994]
+script = ExtResource("1_fi0c1")
+
+[node name="Systems" type="Node3D" parent="." unique_id=296648493]
+
+[node name="Hull" type="Node3D" parent="Systems" unique_id=619837403]
+script = ExtResource("2_cpk57")
+metadata/_custom_type_script = "uid://bvtdiucb22tt4"
+
+[node name="Reactor" type="Node3D" parent="Systems" unique_id=1298072655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1.7782562)
+script = ExtResource("3_x0dvg")
+metadata/_custom_type_script = "uid://bvtdiucb22tt4"
+
+[node name="ReactorMesh" type="CSGBox3D" parent="Systems/Reactor" unique_id=821331886]
+material_override = SubResource("StandardMaterial3D_cpk57")
+use_collision = true
+
+[node name="RepairArea" type="Area3D" parent="Systems/Reactor" unique_id=313707930]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Systems/Reactor/RepairArea" unique_id=2037861032]
+shape = SubResource("BoxShape3D_cpk57")
+
+[node name="Label3D" type="Label3D" parent="Systems/Reactor" unique_id=512173029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+billboard = 1
+text = "[E] Repair"
+font_size = 20
+
+[node name="Engine" type="Node3D" parent="Systems" unique_id=983215678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+script = ExtResource("4_6fnqi")
+metadata/_custom_type_script = "uid://bvtdiucb22tt4"
+
+[node name="EngineMesh" type="CSGBox3D" parent="Systems/Engine" unique_id=1414824441]
+material_override = SubResource("StandardMaterial3D_x0dvg")
+use_collision = true
+
+[node name="RepairArea" type="Area3D" parent="Systems/Engine" unique_id=1954349931]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Systems/Engine/RepairArea" unique_id=1619312750]
+shape = SubResource("BoxShape3D_cpk57")
+
+[node name="Label3D" type="Label3D" parent="Systems/Engine" unique_id=1226209434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+billboard = 1
+text = "[E] Repair"
+font_size = 20
+
+[node name="SonarSystem" type="Node3D" parent="Systems" unique_id=1631946729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1.779564)
+script = ExtResource("5_sls6b")
+metadata/_custom_type_script = "uid://bvtdiucb22tt4"
+
+[node name="SonarMesh" type="CSGBox3D" parent="Systems/SonarSystem" unique_id=3646129]
+material_override = SubResource("StandardMaterial3D_6fnqi")
+use_collision = true
+
+[node name="RepairArea" type="Area3D" parent="Systems/SonarSystem" unique_id=2001227895]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Systems/SonarSystem/RepairArea" unique_id=1606392166]
+shape = SubResource("BoxShape3D_cpk57")
+
+[node name="Label3D" type="Label3D" parent="Systems/SonarSystem" unique_id=1200157741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+billboard = 1
+text = "[E] Repair"
+font_size = 20
+
+[node name="JumpDrive" type="Node3D" parent="Systems" unique_id=1403318516]
+script = ExtResource("6_sls6b")
+metadata/_custom_type_script = "uid://bvtdiucb22tt4"
+
+[node name="Interior" type="Node3D" parent="." unique_id=1815319618]
+
+[node name="Sonar" parent="Interior" unique_id=1607751529 instance=ExtResource("7_x0dvg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.918463, 0.65166163, -2.5357368)
+
+[node name="StatusPanel" parent="Interior" unique_id=628136955 node_paths=PackedStringArray("ship") instance=ExtResource("6_cpk57")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -6.287653, 1.002453, -1.5006156)
+ship = NodePath("../..")
+
+[node name="JumoConsole" parent="Interior" unique_id=1156442337 instance=ExtResource("9_sls6b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.4249973, 1, 2.1965423)
+
+[node name="Exterior" type="Node3D" parent="." unique_id=527494957]
+
+[node name="HullMesh" type="CSGBox3D" parent="Exterior" unique_id=684952696]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 8.860747, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_f3bpr")
+use_collision = true
+
+[node name="HullMesh2" type="CSGBox3D" parent="Exterior" unique_id=1309639176]
+transform = Transform3D(15.999999, 0, 0, 0, -4.3711385e-08, 3.8768756, 0, -0.99999994, -1.6946362e-07, 0, 1.4337347, 4.7025595)
+material_override = SubResource("StandardMaterial3D_y6sgo")
+use_collision = true
+
+[node name="HullMesh3" type="CSGBox3D" parent="Exterior" unique_id=261060351]
+transform = Transform3D(15.999999, 0, 0, 0, -4.3711385e-08, 3.8768756, 0, -0.99999994, -1.6946362e-07, 0, 1.4337347, -3.9326544)
+material_override = SubResource("StandardMaterial3D_dhqun")
+use_collision = true
+
+[node name="HullMesh4" type="CSGBox3D" parent="Exterior" unique_id=1002066726]
+transform = Transform3D(-4.5055813e-07, 0.99999994, 1.6946363e-07, 0, -4.371139e-08, 3.8768756, 10.307569, 4.3711385e-08, 2.118092e-14, 7.5506077, 1.4337347, 0.38625225)
+material_override = SubResource("StandardMaterial3D_sls6b")
+use_collision = true
+size = Vector3(0.93478394, 1, 1)

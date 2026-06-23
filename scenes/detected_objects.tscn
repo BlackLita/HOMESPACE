@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d20a63i0lhk6d"]
+
+[ext_resource type="Script" uid="uid://mo1hnwtmx5ux" path="res://scripts/ship/system/status_panel.gd" id="1_504il"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y71ph"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y71ph"]
+
+[node name="detected_objects" type="Node3D" unique_id=628136955]
+script = ExtResource("1_504il")
+
+[node name="MeshInstance3D2" type="CSGBox3D" parent="." unique_id=655944634]
+transform = Transform3D(-2.7175903, 0, -4.26632e-08, 0, 1, 0, 2.3757929e-07, 0, -0.48801017, 0, 1, 0)
+use_collision = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1697438339]
+transform = Transform3D(-2.2684872, -1.1496236e-14, 3.9558807e-07, -8.741603e-15, 1, 3.9558807e-07, -1.9831745e-07, 8.742278e-08, -4.525, 0.027758226, 1, -0.2557108)
+material_override = SubResource("StandardMaterial3D_y71ph")
+mesh = SubResource("QuadMesh_y71ph")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1126621434]
+size = Vector2i(1024, 512)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=740894508]
+custom_minimum_size = Vector2(1024, 512)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/Control" unique_id=360775767]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="detected_obj" type="Label" parent="SubViewport/Control/VBoxContainer" unique_id=1684942364]
+custom_minimum_size = Vector2(20, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
