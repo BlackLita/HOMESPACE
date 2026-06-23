@@ -1,3 +1,19 @@
-# Godot 4+ specific ignores
 .godot/
-/android/
+.import/
+export.cfg
+export_credentials.cfg
+
+# Godot temp files
+*.tmp
+
+# Translations
+*.translation
+
+# Mono (C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS junk
+.DS_Store
+Thumbs.db
