@@ -8,8 +8,10 @@ var time: float = 0
 var speed: float = 5.0
 var sphere = SphereShape3D.new()
 var is_broken: bool = false
-@onready var sonar_system: ShipSystem = $"../../Systems/SonarSystem"
-@onready var reactor_system: ShipSystem = $"../../Systems/Reactor"
+
+@onready var systems: Dictionary[String, ShipSystem] = {
+	"sonar": $"../../Systems/SonarSystem",
+}
 
 @onready var control: Control = $detected_objects/SubViewport/Control/VBoxContainer
 
@@ -35,17 +37,17 @@ func _process(delta: float) -> void:
 		ping()
 
 func ping():
-	if !sonar_system.can_operate():
-		return
-	
+	var sonar_system = systems["sonar"]
 	var space = get_world_3d().direct_space_state
 	var query = PhysicsShapeQueryParameters3D.new()
+	var result = space.intersect_shape(query)
+
+	if !sonar_system.can_operate():
+		return
 
 	query.shape = sphere
 	query.transform = global_transform
 	sphere.radius = radius
-
-	var result = space.intersect_shape(query)
 
 	for hit in result:
 		var obj = hit.collider
