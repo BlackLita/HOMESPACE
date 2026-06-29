@@ -1,12 +1,14 @@
 extends Node3D
 class_name ShipSystem
 
-signal broken
-signal repaired
+signal broken # Emitted when the system becomes completely inoperable.
+signal repaired # Emitted when the system is restored from a broken state.
 
 var max_hp: float = 100
 var current_hp: float = 100
 
+# Applies damage to the system.
+# Emits the `broken` signal if the system becomes inoperable.
 func damage(amount: float) -> void:
 	var was_broken = is_broken()
 	
@@ -15,6 +17,8 @@ func damage(amount: float) -> void:
 	if !was_broken and is_broken():
 		broken.emit()
 
+# Repairs the system.
+# Emits the `repaired` signal if the system is restored.
 func repair(amount: float) -> void:
 	var was_broken = is_broken()
 	var is_repair = current_hp < max_hp
@@ -37,5 +41,6 @@ func status_now() -> String:
 	
 	return "OFLINE"
 
+# Returns true if the system is completely broken.
 func is_broken() -> bool:
 	return current_hp <= 0
