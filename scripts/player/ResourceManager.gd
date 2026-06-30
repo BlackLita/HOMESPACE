@@ -1,0 +1,16 @@
+extends Node
+class_name ResourceManager
+
+var resources: Dictionary[String, int] = {
+	"metal": 0,
+	"electronics": 0,
+	"fuel": 0,
+}
+
+func add_resource(resource: String, amount: int) -> void: resources[resource] += amount
+func remove_resource(resource: String, amount: int) -> void:
+	if !has_resource(resource, amount):
+		return
+	resources[resource] -= amount
+func has_resource(resource: String, amount: int) -> bool: return get_resource(resource) >= amount
+func get_resource(resource: String) -> int: return resources.get(resource, 0)

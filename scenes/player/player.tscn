@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://rp3w4718r54d"]
 
 [ext_resource type="Script" uid="uid://bf2akgwvhfscn" path="res://scripts/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://c0fddvln8p2ox" path="res://scripts/player/ResourceManager.gd" id="2_dovo2"]
+[ext_resource type="PackedScene" uid="uid://bjyaipaxawev6" path="res://scenes/player/ui_resource.tscn" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://bcaf03tl3jixl" path="res://scripts/player/ui_resource.gd" id="4_lvxji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nvj10"]
 
@@ -22,3 +25,10 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Iteract" type="RayCast3D" parent="head" unique_id=445351026]
 transform = Transform3D(1.9106855e-15, 8.742278e-08, 1, 1, -8.742278e-08, 0, 4.371139e-08, 2, -4.371139e-08, 0, 0, 0)
+
+[node name="resource_manager" type="Node" parent="." unique_id=1549012699]
+script = ExtResource("2_dovo2")
+
+[node name="ui_resource" parent="." unique_id=726449436 node_paths=PackedStringArray("rm") instance=ExtResource("3_gmlin")]
+script = ExtResource("4_lvxji")
+rm = NodePath("../resource_manager")

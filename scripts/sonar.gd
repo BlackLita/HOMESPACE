@@ -4,7 +4,7 @@ var detected_objects = []
 
 var radius: float = 1.0
 var max_radius: int = 100
-var time: float = 0
+var time: float = 0.0
 var speed: float = 5.0
 var sphere = SphereShape3D.new()
 var is_broken: bool = false
@@ -16,7 +16,7 @@ var is_broken: bool = false
 @onready var control: Control = $detected_objects/SubViewport/Control/VBoxContainer
 
 func _ready() -> void:
-	sphere.radius = 1
+	sphere.radius = 1.0
 
 func _process(delta: float) -> void:
 	var names = []
@@ -26,8 +26,8 @@ func _process(delta: float) -> void:
 	time -= delta
 	
 	if time <= 0:
-		time = 10
-		radius = 1
+		time = 10.0
+		radius = 1.0
 		detected_objects.clear()
 		
 	if radius < max_radius:
@@ -40,19 +40,19 @@ func ping():
 	var sonar_system = systems["sonar"]
 	var space = get_world_3d().direct_space_state
 	var query = PhysicsShapeQueryParameters3D.new()
-	var result = space.intersect_shape(query)
+	
 
 	if !sonar_system.can_operate():
 		return
-
+	
 	query.shape = sphere
 	query.transform = global_transform
 	sphere.radius = radius
+	
+	var result = space.intersect_shape(query)
 
 	for hit in result:
 		var obj = hit.collider
-		if obj.is_in_group("player"):
-			continue
 		if obj in detected_objects:
 			continue
 		detected_objects.append(obj)
