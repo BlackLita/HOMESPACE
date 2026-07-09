@@ -8,7 +8,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="metal" type="Label" parent="." unique_id=1509479353]
+[node name="resources" type="VBoxContainer" parent="." unique_id=1900154982]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.0
+
+[node name="metal" type="Label" parent="resources" unique_id=1509479353]
+layout_mode = 2
+
+[node name="elect" type="Label" parent="resources" unique_id=1755998941]
+layout_mode = 2
+
+[node name="fuel" type="Label" parent="resources" unique_id=1497455999]
+layout_mode = 2

@@ -4,8 +4,10 @@ class_name ShipSystem
 signal broken # Emitted when the system becomes completely inoperable.
 signal repaired # Emitted when the system is restored from a broken state.
 
-var max_hp: float = 100
-var current_hp: float = 100
+var max_hp: float = 100.0
+var current_hp: float = 100.0
+
+@export var label: Label3D
 
 # Applies damage to the system.
 # Emits the `broken` signal if the system becomes inoperable.
@@ -32,15 +34,30 @@ func repair(amount: float) -> void:
 func status_now() -> String:
 	if current_hp >= max_hp:
 		return "ONLINE"
-	
-	if current_hp < max_hp and current_hp > 0:
+	if  current_hp > 0.0:
 		return "DAMAGE"
-	
-	if current_hp <= 0:
-		return "ERROR"
-	
-	return "OFLINE"
+	return "ERROR"
 
 # Returns true if the system is completely broken.
 func is_broken() -> bool:
 	return current_hp <= 0
+
+func needs_repair() -> bool:
+	return current_hp < max_hp
+
+func get_interact_prompt() -> String:
+	return "[E]\nRepair: %s\n%.0f%%" % [name, current_hp / max_hp * 100]
+
+func try_repair(delta: float, rm: ResourceManager):
+	if !rm.has_resource("metal", 5.0):
+		return
+	repair(5.0*delta)
+	rm.remove_resource("metal", 5.0 * delta)
+
+func update_label():
+	label.visible = needs_repair()
+	if needs_repair():
+		label.text = get_interact_prompt()
+		
+	
+	

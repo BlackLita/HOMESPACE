@@ -41,9 +41,10 @@ script = ExtResource("1_fi0c1")
 script = ExtResource("2_cpk57")
 metadata/_custom_type_script = "uid://bvtdiucb22tt4"
 
-[node name="Reactor" type="Node3D" parent="Systems" unique_id=1298072655]
+[node name="Reactor" type="Node3D" parent="Systems" unique_id=1298072655 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1.7782562)
 script = ExtResource("3_x0dvg")
+label = NodePath("Label3D")
 metadata/_custom_type_script = "uid://bvtdiucb22tt4"
 
 [node name="ReactorMesh" type="CSGBox3D" parent="Systems/Reactor" unique_id=821331886]
@@ -62,9 +63,10 @@ billboard = 1
 text = "[E] Repair"
 font_size = 20
 
-[node name="Engine" type="Node3D" parent="Systems" unique_id=983215678]
+[node name="Engine" type="Node3D" parent="Systems" unique_id=983215678 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 script = ExtResource("4_6fnqi")
+label = NodePath("Label3D")
 metadata/_custom_type_script = "uid://bvtdiucb22tt4"
 
 [node name="EngineMesh" type="CSGBox3D" parent="Systems/Engine" unique_id=1414824441]
@@ -83,9 +85,10 @@ billboard = 1
 text = "[E] Repair"
 font_size = 20
 
-[node name="SonarSystem" type="Node3D" parent="Systems" unique_id=1631946729]
+[node name="SonarSystem" type="Node3D" parent="Systems" unique_id=1631946729 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1.779564)
 script = ExtResource("5_sls6b")
+label = NodePath("Label3D")
 metadata/_custom_type_script = "uid://bvtdiucb22tt4"
 
 [node name="SonarMesh" type="CSGBox3D" parent="Systems/SonarSystem" unique_id=3646129]

@@ -35,27 +35,32 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, speed)
 		velocity.z = move_toward(velocity.z, 0.0, speed)
-		
-	if collider and collider.get_parent() is ShipSystem:
-		var system: Object = collider.get_parent()
-		var label: Label3D = system.get_node("Label3D")
-		
-		if system.current_hp < system.max_hp:
-			label.visible = true
-			label.text = "[E]\nRepair: %s\n%.0f%%" % [system.name, system.current_hp / system.max_hp * 100]
-			if Input.is_action_pressed("interect") and rm.has_resource("metal", 10):
-				system.repair(5*delta)
-				rm.remove_resource("metal", 5)
-		else:
-			label.visible = false
-
-	if Input.is_action_just_pressed("interect"):
-		if collider and collider.has_method("interect"):
-			collider.interect()
 	
-	if Input.is_action_just_pressed("one"):
-		rm.add_resource("metal", 5)
+	_handle_interaction(delta)
+	
+	if OS.is_debug_build():
+		_handle_debug_input()
 			
 	move_and_slide()
+
+func _handle_interaction(delta: float) -> void:
+	var collider = raycast.get_collider()
+	var target = collider.get_parent() if collider else null
+	
+	if target is ShipSystem:
+		target.update_label()
+		if Input.is_action_pressed("interect"):
+			target.try_repair(delta, rm)
+	elif collider and collider.has_method("interect"):
+		if Input.is_action_just_pressed("interect"):
+			collider.interect()
+		
+func _handle_debug_input() -> void:
+	if Input.is_action_just_pressed("one"):
+		rm.add_resource("metal", 5)
+	if Input.is_action_just_pressed("two"):
+		rm.add_resource("electronics", 5)
+	if Input.is_action_just_pressed("three"):
+		rm.add_resource("fuel", 5)
 	
 	
