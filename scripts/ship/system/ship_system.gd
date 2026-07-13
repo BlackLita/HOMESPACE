@@ -48,11 +48,12 @@ func needs_repair() -> bool:
 func get_interact_prompt() -> String:
 	return "[E]\nRepair: %s\n%.0f%%" % [name, current_hp / max_hp * 100]
 
-func try_repair(delta: float, rm: ResourceManager):
-	if !rm.has_resource("metal", 5.0):
-		return
-	repair(5.0*delta)
-	rm.remove_resource("metal", 5.0 * delta)
+func try_repair(delta: float, rm: ResourceManager) -> void:
+	if needs_repair():
+		if !rm.has_resource("metal", 5.0):
+			return
+		repair(5.0*delta)
+		rm.remove_resource("metal", 5.0 * delta)
 
 func update_label():
 	label.visible = needs_repair()

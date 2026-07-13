@@ -12,13 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69c68518-9725-46a9-8986-dbf9914cbf02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Ship/ship.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Ship/ship.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/player/ui_resource.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/player/ui_resource.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player/ResourceManager.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player/ResourceManager.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player/ui_resource.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player/ui_resource.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ship/system/ship_system.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ship/system/ship_system.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +137,9 @@
       <workItem from="1782823298979" duration="769000" />
       <workItem from="1782824087423" duration="493000" />
       <workItem from="1782824607590" duration="2867000" />
-      <workItem from="1783573111858" duration="6249000" />
+      <workItem from="1783573111858" duration="6526000" />
+      <workItem from="1783685170724" duration="213000" />
+      <workItem from="1783856239205" duration="3020000" />
     </task>
     <servers />
   </component>
