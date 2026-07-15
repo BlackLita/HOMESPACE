@@ -29,8 +29,8 @@ func add_resource(resource: String, amount: float) -> void:
 	var delta: float = new_value - old_value
 	resources[resource] = new_value
 	if delta > 0:
-		change_resource.emit()
-		resources_added.emit()
+		change_resource.emit(resource, new_value, delta)
+		resources_added.emit(resource, new_value)
 
 func remove_resource(resource: String, amount: float) -> bool:
 	if amount <= 0:
@@ -39,8 +39,8 @@ func remove_resource(resource: String, amount: float) -> bool:
 		insufficient_resources.emit(resource, amount, get_resource(resource))
 		return false
 	resources[resource] -= amount
-	change_resource.emit()
-	resources_removed.emit()
+	change_resource.emit(resource, resources[resource], -amount)
+	resources_removed.emit(resource, amount)
 	return true
 	
 
@@ -57,7 +57,7 @@ func can_afford(cost: Dictionary) -> bool:
 	return true
 
 func spend(cost: Dictionary) -> bool:
-	if can_afford(cost):
+	if not can_afford(cost):
 		for resource in cost:
 			if not has_resource(resource, cost[resource]):
 				insufficient_resources.emit(resource, cost[resource], get_resource(resource))
