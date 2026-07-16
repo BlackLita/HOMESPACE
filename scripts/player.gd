@@ -49,11 +49,11 @@ func _handle_interaction(delta: float) -> void:
 	
 	if target is ShipSystem:
 		target.update_label()
-		if Input.is_action_pressed("interect"):
+		if Input.is_action_pressed("interact"):
 			target.try_repair(delta, rm)
-	elif collider and collider.has_method("interect"):
-		if Input.is_action_just_pressed("interect"):
-			collider.interect()
+	elif collider and collider.has_method("interact"):
+		if Input.is_action_just_pressed("interact"):
+			collider.interact()
 		
 func _handle_debug_input() -> void:
 	if Input.is_action_just_pressed("one"):

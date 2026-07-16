@@ -12,8 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69c68518-9725-46a9-8986-dbf9914cbf02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player/ResourceManager.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player/ResourceManager.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player/ui_resource.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player/ui_resource.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,8 @@
       <workItem from="1783856239205" duration="3020000" />
       <workItem from="1783943076125" duration="5525000" />
       <workItem from="1784089939469" duration="422000" />
-      <workItem from="1784103136414" duration="5862000" />
+      <workItem from="1784103136414" duration="6324000" />
+      <workItem from="1784119237480" duration="1271000" />
     </task>
     <servers />
   </component>

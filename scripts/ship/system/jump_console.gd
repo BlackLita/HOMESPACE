@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	else:
 		status_bar.material_override.albedo_color = Color.RED
 
-func interect():
+func interact():
 	var ship_manager: ShipManager = systems["ship_manager"]
 	
 	ship_manager.jump()
