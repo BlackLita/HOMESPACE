@@ -6,7 +6,7 @@ var jump_force = 4.5
 var mouse_sens = 0.25
 var direction: Vector3 = Vector3.ZERO
 @onready var head: Node3D = $head
-@onready var raycast = $head/Iteract
+@onready var raycast: RayCast3D = $head/Iteract
 @onready var camera_3d: Camera3D = $head/Camera3D
 @onready var rm: ResourceManager = $resource_manager
 
@@ -16,10 +16,7 @@ func _input(event: InputEvent) -> void:
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90.0), deg_to_rad(90.0))
 
-func _physics_process(delta: float) -> void:
-	var collider: Object = raycast.get_collider()
-	
-	
+func _physics_process(delta: float) -> void:	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -44,13 +41,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _handle_interaction(delta: float) -> void:
-	var collider = raycast.get_collider()
+	var collider: Object = raycast.get_collider()
 	var target = collider.get_parent() if collider else null
 	
 	if target is ShipSystem:
 		target.update_label()
 		if Input.is_action_pressed("interact"):
 			target.try_repair(delta, rm)
+	if target is ResourcePickup:
+		if Input.is_action_just_pressed("interact"):
+			target.interact(rm)
 	elif collider and collider.has_method("interact"):
 		if Input.is_action_just_pressed("interact"):
 			collider.interact()
@@ -64,3 +64,7 @@ func _handle_debug_input() -> void:
 		rm.add_resource("fuel", 5)
 	
 	
+
+
+func _on_resource_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cnn13f76tq1cc" path="res://texture/Dark/texture_04.png" id="1_k3ref"]
 [ext_resource type="PackedScene" uid="uid://rp3w4718r54d" path="res://scenes/player/player.tscn" id="3_havs6"]
 [ext_resource type="PackedScene" uid="uid://c6uc0gbyjiqv0" path="res://scenes/Ship/ship.tscn" id="3_nvj10"]
+[ext_resource type="PackedScene" uid="uid://dnutvsunurs11" path="res://scenes/worlds/resource.tscn" id="4_havs6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k3ref"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,3 +43,8 @@ transform = Transform3D(0.258819, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.258819
 
 [node name="Ship" parent="." unique_id=1129097528 instance=ExtResource("3_nvj10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33390236, 1, -2.0040483)
+
+[node name="Resource" parent="." unique_id=1478815318 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.351814, 0.526886, -0.20334482)
+resource = "fuel"
+amount = 15.0

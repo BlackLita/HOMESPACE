@@ -23,9 +23,8 @@ func damage(amount: float) -> void:
 # Emits the `repaired` signal if the system is restored.
 func repair(amount: float) -> void:
 	var was_broken: bool = is_broken()
-	var is_repair: bool = current_hp < max_hp
 	
-	if is_repair:
+	if needs_repair():
 		current_hp = min(current_hp + amount, max_hp)
 	
 	if was_broken and !is_broken():
@@ -59,6 +58,3 @@ func update_label():
 	label.visible = needs_repair()
 	if needs_repair():
 		label.text = get_interact_prompt()
-		
-	
-	

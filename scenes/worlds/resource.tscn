@@ -1,19 +1,13 @@
 [gd_scene format=3 uid="uid://dnutvsunurs11"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
+[ext_resource type="Script" uid="uid://dff23p704u5dx" path="res://scripts/resource_pickup.gd" id="1_60yao"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
-size = Vector3(1, 0.8826904, 1)
+[node name="Resource" type="Node3D" unique_id=1478815318]
+script = ExtResource("1_60yao")
 
-[node name="Resource" type="Area3D" unique_id=1718782461]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=486943608]
-transform = Transform3D(2.9986153, 0, 0, 0, 1, 0, 0, 0, 3.1296394, 0, 0.27204335, 0)
-shape = SubResource("BoxShape3D_riqys")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1140742813]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4387228, 0, 0.33050537, 0)
-mesh = SubResource("BoxMesh_bhunq")
+[node name="MeshInstance3D" type="CSGBox3D" parent="." unique_id=2140912038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4387228, 0, 0.473114, 0)
+use_collision = true
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1446372704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9161494, 0)
