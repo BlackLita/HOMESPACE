@@ -11,12 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69c68518-9725-46a9-8986-dbf9914cbf02" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/resource_fuel.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/worlds/resource.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/worlds/resource.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/worlds/test_world.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/worlds/test_world.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/player.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ship/system/ship_system.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ship/system/ship_system.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resource_pickup.gd" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/resource_pickup.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +147,10 @@
       <workItem from="1784103136414" duration="6324000" />
       <workItem from="1784119237480" duration="1271000" />
       <workItem from="1784172332411" duration="7276000" />
-      <workItem from="1784282216292" duration="7253000" />
+      <workItem from="1784282216292" duration="7814000" />
+      <workItem from="1784350872121" duration="1932000" />
+      <workItem from="1784450838356" duration="2757000" />
+      <workItem from="1784605579168" duration="1632000" />
     </task>
     <servers />
   </component>

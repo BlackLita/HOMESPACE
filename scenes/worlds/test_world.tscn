@@ -46,5 +46,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33390236, 1, -2.0040483)
 
 [node name="Resource" parent="." unique_id=1478815318 instance=ExtResource("4_havs6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.351814, 0.526886, -0.20334482)
-resource = "fuel"
+resource = "metal"
 amount = 15.0
