@@ -6,7 +6,7 @@ var jump_force = 4.5
 var mouse_sens = 0.25
 var direction: Vector3 = Vector3.ZERO
 @onready var head: Node3D = $head
-@onready var raycast: RayCast3D = $head/Iteract
+@onready var raycast: RayCast3D = $head/Interact
 @onready var camera_3d: Camera3D = $head/Camera3D
 @onready var rm: ResourceManager = $resource_manager
 
@@ -62,9 +62,3 @@ func _handle_debug_input() -> void:
 		rm.add_resource("electronics", 5)
 	if Input.is_action_just_pressed("three"):
 		rm.add_resource("fuel", 5)
-	
-	
-
-
-func _on_resource_body_exited(body: Node3D) -> void:
-	pass # Replace with function body.

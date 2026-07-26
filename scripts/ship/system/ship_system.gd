@@ -49,7 +49,7 @@ func get_interact_prompt() -> String:
 
 func try_repair(delta: float, rm: ResourceManager) -> void:
 	if needs_repair():
-		if !rm.has_resource("metal", 5.0):
+		if !rm.has_resource("metal", 5.0*delta):
 			return
 		repair(5.0*delta)
 		rm.remove_resource("metal", 5.0 * delta)

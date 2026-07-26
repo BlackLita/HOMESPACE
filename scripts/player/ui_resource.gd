@@ -8,10 +8,6 @@ var labels: Dictionary[String, Label] = {
 	"fuel": $resources/fuel,
 }
 
-@onready var metal: Label = $resources/metal
-@onready var elec: Label = $resources/elect
-@onready var fuel: Label = $resources/fuel
-
 func _ready() -> void:
 	rm.change_resource.connect(_on_resource_change)
 
