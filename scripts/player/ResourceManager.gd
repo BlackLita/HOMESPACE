@@ -52,14 +52,14 @@ func get_resource(resource: String) -> float:
 
 func can_afford(cost: Dictionary) -> bool:
 	for resource in cost:
-		if not has_resource(resource, cost[resource]):
+		if !has_resource(resource, cost[resource]):
 			return false
 	return true
 
 func spend(cost: Dictionary) -> bool:
-	if not can_afford(cost):
+	if !can_afford(cost):
 		for resource in cost:
-			if not has_resource(resource, cost[resource]):
+			if !has_resource(resource, cost[resource]):
 				insufficient_resources.emit(resource, cost[resource], get_resource(resource))
 		return false
 	for resource in cost:

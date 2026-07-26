@@ -26,9 +26,8 @@ func repair(amount: float) -> void:
 	
 	if needs_repair():
 		current_hp = min(current_hp + amount, max_hp)
-	
-	if was_broken and !is_broken():
-		repaired.emit()
+		if was_broken and !is_broken():
+			repaired.emit()
 
 func status_now() -> String:
 	if current_hp >= max_hp:
