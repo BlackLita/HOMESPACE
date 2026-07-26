@@ -17,3 +17,6 @@ mono_crash.*.json
 # OS junk
 .DS_Store
 Thumbs.db
+
+#IDE
+.idea/
