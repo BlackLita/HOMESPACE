@@ -46,5 +46,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33390236, 1, -2.0040483)
 
 [node name="Resource" parent="." unique_id=1478815318 instance=ExtResource("4_havs6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.351814, 0.526886, -0.20334482)
-resource = "metal"
-amount = 25.0
+
+[node name="Resource2" parent="." unique_id=1441498656 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.351814, 0.526886, 1.7418799)
+
+[node name="Resource3" parent="." unique_id=2097400808 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.182678, 0.526886, 1.7418799)
+
+[node name="Resource4" parent="." unique_id=716021470 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.182678, 0.526886, 24.59317)
+
+[node name="Resource5" parent="." unique_id=889678625 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.631522, 0.526886, 8.982583)
+
+[node name="Resource6" parent="." unique_id=365257763 instance=ExtResource("4_havs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.631522, 0.526886, 19.966581)

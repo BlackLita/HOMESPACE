@@ -1,9 +1,9 @@
 extends Node3D
 class_name ResourcePickup
 
-@export_enum("metal", "electronics", "fuel") var resource: String
-@export_range(0.0, 25.0, 1.0) var amount: float
+var resource: Array = ["metal", "electronics", "fuel"]
+var amount: float = randf_range(8, 15)
 	
 func interact(rm: ResourceManager):
-	rm.add_resource(resource, amount)
+	rm.add_resource(resource.pick_random(), amount)
 	queue_free()

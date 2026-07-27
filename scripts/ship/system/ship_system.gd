@@ -7,6 +7,10 @@ signal repaired # Emitted when the system is restored from a broken state.
 var max_hp: float = 100.0
 var current_hp: float = 100.0
 
+@export var repair_cost: Dictionary[String, float] = {
+	"metal": 4.0,
+	"electronics": 1.5,
+}
 @export var label: Label3D
 
 # Applies damage to the system.
@@ -48,12 +52,16 @@ func get_interact_prompt() -> String:
 
 func try_repair(delta: float, rm: ResourceManager) -> void:
 	if needs_repair():
-		if !rm.has_resource("metal", 5.0*delta):
-			return
-		repair(5.0*delta)
-		rm.remove_resource("metal", 5.0 * delta)
+		for res in repair_cost:
+			if !rm.has_resource(res, repair_cost[res]*delta):
+				return
+		for res in repair_cost:
+			rm.remove_resource(res, repair_cost[res]*delta)
+		repair(2.5*delta)
 
 func update_label():
 	label.visible = needs_repair()
 	if needs_repair():
 		label.text = get_interact_prompt()
+	else:
+		label.text = ""
